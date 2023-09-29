@@ -1,5 +1,5 @@
 class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
-    before_action :configure_sign_up_params
+  before_action :configure_sign_up_params
   respond_to :json
 
   # POST /users
@@ -78,4 +78,4 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
       address: %i[street city state zip_code]
     )
   end
-  end
+end

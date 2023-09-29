@@ -1,6 +1,6 @@
 class Api::V1::AppointmentsController < Api::V1::ApplicationController
-    # Your API-specific actions for appointments
-    before_action :set_appointment, only: %i[show update destroy]
+  # Your API-specific actions for appointments
+  before_action :set_appointment, only: %i[show update destroy]
 
   # GET /appointments
   def index
@@ -68,4 +68,4 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
     appointment_params
   end
-  end
+end
