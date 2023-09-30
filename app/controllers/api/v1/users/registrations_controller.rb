@@ -1,4 +1,5 @@
 class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
+  skip_before_action :verify_authenticity_token
   before_action :configure_sign_up_params
   respond_to :json
 
