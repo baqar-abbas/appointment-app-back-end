@@ -9,7 +9,6 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
     # puts "Received sign-in request with email: #{email: params[:user][:email]}"
     puts "Received sign-in request with email: #{params[:user][:email]}"
 
-
     if @user.nil?
       puts 'User not found'
       render json: { message: 'Invalid email', data: { code: 401 } }, status: :unauthorized

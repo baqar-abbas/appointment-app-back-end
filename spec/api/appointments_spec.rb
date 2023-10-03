@@ -57,7 +57,6 @@ RSpec.describe 'Appointments API', type: :request do
   end
 end
 
-
 RSpec.describe 'Appointments API', type: :request do
   let(:patient) { create(:user, :patient) }
   let(:doctor) { create(:user, :doctor) }
