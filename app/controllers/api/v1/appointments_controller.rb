@@ -1,10 +1,27 @@
 class Api::V1::AppointmentsController < Api::V1::ApplicationController
-  # Your API-specific actions for appointments
+  # API-specific actions for appointments
+  skip_before_action :verify_authenticity_token
+  # before_action :authenticate_user!
   before_action :set_appointment, only: %i[show update destroy]
 
   # GET /appointments
   def index
     @appointments = Appointment.all
+    # if current_user
+    #   @appointments = if current_user.doctor?
+    #                     current_user.doctor_appointments
+    #                   elsif current_user.patient?
+    #                     current_user.patient_appointments
+    #                   elsif current_user.super_admin? || current_user.admin?
+    #                     Appointment.all
+    #                   else
+    #                     []
+    #                   end
+    # else
+    #   render json: { error: 'User not authenticated' }, status: :unauthorized
+    #   return
+    # end
+
     render json: @appointments
   end
 
@@ -15,7 +32,7 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # POST /appointments
   def create
-    appointment_params = appointment_params_with_role_check
+    # appointment_params = appointment_params_with_role_check
 
     @appointment = Appointment.new(appointment_params)
 
@@ -57,15 +74,15 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
     )
   end
 
-  def appointment_params_with_role_check
-    appointment_params = appointment_params()
-    # Check if the user is a doctor or patient and set the corresponding user_id
-    if current_user.doctor?
-      appointment_params[:doctor_id] = current_user.id
-    elsif current_user.patient?
-      appointment_params[:patient_id] = current_user.id
-    end
+  # def appointment_params_with_role_check
+  #   appointment_params = appointment_params()
+  #   # Check if the user is a doctor or patient and set the corresponding user_id
+  #   if current_user.doctor?
+  #     appointment_params[:doctor_id] = current_user.id
+  #   elsif current_user.patient?
+  #     appointment_params[:patient_id] = current_user.id
+  #   end
 
-    appointment_params
-  end
+  #   appointment_params
+  # end
 end
