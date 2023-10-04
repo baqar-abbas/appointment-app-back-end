@@ -26,7 +26,7 @@
 
 - Doctor Appointment App is a web-based application designed to streamline and simplify the process of scheduling and managing appointments with healthcare providers. This open-source project aims to provide a user-friendly interface for patients to book appointments, view their medical history, and receive reminders for upcoming visits. Additionally, it offers healthcare professionals a platform to manage their schedules and access patient information efficiently.
 
-## 🚀 Link to front end Repository <a name="live-demo">https://github.com/baqar-abbas/appointment-app-front-end/</a>
+- [Link to front end Repository](https://github.com/baqar-abbas/appointment-app-front-end)
 
 ## 🛠 Built With <a name="built-with"></a>
 
