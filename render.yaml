@@ -1,7 +1,7 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: doctors_app
+    databaseName: doctors_app_ajnu
+    user: doctors_app_ajnu_user
 
 services:
   - type: web
