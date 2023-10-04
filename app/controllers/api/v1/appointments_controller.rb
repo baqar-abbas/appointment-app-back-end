@@ -1,5 +1,4 @@
 class Api::V1::AppointmentsController < Api::V1::ApplicationController
-
   # API-specific actions for appointments
   skip_before_action :verify_authenticity_token
   # before_action :authenticate_user!
@@ -7,7 +6,7 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # GET /appointments
   def index
-      # @appointments = Appointment.find_by(patient_id: 8)
+    # @appointments = Appointment.find_by(patient_id: 8)
     @appointments = Appointment.all
     # if current_user
     #   @appointments = if current_user.doctor?
