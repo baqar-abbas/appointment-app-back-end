@@ -6,6 +6,7 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # GET /appointments
   def index
+    # @appointments = Appointment.find_by(patient_id: 8)
     @appointments = Appointment.all
     # if current_user
     #   @appointments = if current_user.doctor?
