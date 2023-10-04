@@ -26,6 +26,8 @@
 
 - Doctor Appointment App is a web-based application designed to streamline and simplify the process of scheduling and managing appointments with healthcare providers. This open-source project aims to provide a user-friendly interface for patients to book appointments, view their medical history, and receive reminders for upcoming visits. Additionally, it offers healthcare professionals a platform to manage their schedules and access patient information efficiently.
 
+## 🚀 Link to front end Repository <a name="live-demo">https://github.com/baqar-abbas/appointment-app-front-end/</a>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -53,13 +55,16 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add a Appoinment]**
-- **[Reserve a Appoinment]**
-- **[Delete a Appoinment]**
+- **[Add an Appoinment]**
+- **[Reserve an Appoinment]**
+- **[Delete an Appoinment]**
+- **[New user sign up functionality]**
+- **[New user login functionality]**
+- **[Admin user Add doctors]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo">https://doctor-app-u5x6.onrender.com/</a>
 
 - [Doctor Appoinment App]()
 
@@ -120,7 +125,7 @@ To start the app, run the following command in your terminal:
 - Run the following command to run all tests:
 
 ```
-  bundle exec rspec
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
