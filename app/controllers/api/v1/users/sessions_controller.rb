@@ -6,7 +6,6 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
   def create
     @user = User.find_for_database_authentication(email: params[:user][:email])
     puts "Received params: #{params.inspect}"
-    # puts "Received sign-in request with email: #{email: params[:user][:email]}"
     puts "Received sign-in request with email: #{params[:user][:email]}"
 
     if @user.nil?
@@ -15,15 +14,12 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
     elsif !@user.valid_for_authentication?
       puts 'User not valid for authentication'
       render json: { message: 'Invalid name or password', data: { code: 402 } }, status: :unauthorized
-    # elsif !@user.valid_password?(sign_in_params[:password])
     elsif !@user.valid_password?(params[:user][:password])
       render json: { message: 'Invalid password', data: { code: 403 } }, status: :unauthorized
-    # elsif !@user.valid_name?(sign_in_params[:name])
     elsif !@user.valid_name?(params[:user][:name])
       render json: { message: 'Invalid name', data: { code: 404 } }, status: :unauthorized
     else
       sign_in(:user, @user)
-      # render json: { message: 'Successfully Signed In', data: @user }
       puts 'User signed in successfully'
       jwt_token = JWT.encode({ sub: @user.id }, Rails.application.credentials.fetch(:secret_key_base))
       puts "Received JWT token: #{jwt_token}"
