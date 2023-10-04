@@ -23,7 +23,7 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
       render json: { message: 'Invalid name', data: { code: 404 } }, status: :unauthorized
     else
       sign_in(:user, @user)
-      render json: { message: 'Successfully Signed In', data: @user }
+      # render json: { message: 'Successfully Signed In', data: @user }
       puts 'User signed in successfully'
       jwt_token = JWT.encode({ sub: @user.id }, Rails.application.credentials.fetch(:secret_key_base))
       puts "Received JWT token: #{jwt_token}"
