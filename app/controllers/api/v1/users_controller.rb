@@ -40,7 +40,6 @@ class Api::V1::UsersController < Api::V1::ApplicationController
 
   # DELETE /users/:id
   def destroy
-    
     @user = User.find_by(id: params[:id])
 
     if @user.nil?

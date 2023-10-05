@@ -5,7 +5,6 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # GET /appointments
   def index
-    
     @appointments = Appointment.all
     render json: @appointments
   end
@@ -17,7 +16,6 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # POST /appointments
   def create
-    
     @appointment = Appointment.new(appointment_params)
 
     if @appointment.save
