@@ -107,6 +107,13 @@ Navigate to the project directory in your terminal and run the following command
 Before running the app, you'll need to set up the database. To do this, run the following commands in your terminal:
 
 ```sh
+  These are the steps:
+
+1. Remove config/master.key and config/credentials.yml.enc if they exist.
+2. Run in the terminal: EDITOR=code rails credentials:edit 
+3. Close the editor that opens.
+4. This command will create a new master.key and credentials.yml.enc if they do not exist.
+
   rails db:create
   rails db:migrate
   rails db:seed
