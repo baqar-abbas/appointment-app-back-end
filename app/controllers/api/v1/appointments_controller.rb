@@ -36,11 +36,11 @@ class Api::V1::AppointmentsController < Api::V1::ApplicationController
 
   # DELETE /appointments/:id
   def destroy
-   if @appointment.destroy
-    head :no_content
-   else  
-    render json: @appointment.errors, status: :unprocessable_entity
-   end
+    if @appointment.destroy
+      head :no_content
+    else
+      render json: @appointment.errors, status: :unprocessable_entity
+    end
   end
 
   private
