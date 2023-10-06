@@ -69,11 +69,10 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   end
 
   def authorize_super_admin_or_admin
-   
     @user = User.find_by(id: params[:id])
     role = @user.role
 
-    return unless role == 'super_admin' || role == 'admin'
+    return unless %w[super_admin admin].include?(role)
 
     render json: { error: 'Unauthorized' }, status: :unauthorized
   end
