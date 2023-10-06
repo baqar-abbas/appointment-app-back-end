@@ -1,5 +1,5 @@
 class Api::V1::UsersController < Api::V1::ApplicationController
-  before_action :authenticate_user!, only: [:destroy]
+  skip_before_action :verify_authenticity_token
   before_action :authorize_super_admin_or_admin, only: %i[create destroy]
 
   # GET /users
@@ -69,7 +69,11 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   end
 
   def authorize_super_admin_or_admin
-    return if current_user.super_admin? || current_user.admin?
+   
+    @user = User.find_by(id: params[:id])
+    role = @user.role
+
+    return unless role == 'super_admin' || role == 'admin'
 
     render json: { error: 'Unauthorized' }, status: :unauthorized
   end
